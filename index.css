@@ -3,25 +3,7 @@
 }
 
 body {
-    background-color: #3b0510;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
-    padding-bottom: var(--logo-h);
-    box-sizing: border-box;
-}
-
-h1 {
-    color: #e1dbd7;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 200;
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    letter-spacing: 0.1em;
-    text-align: center;
-    margin: 0;
-    padding: 2.5rem 0 0.5rem;
+    padding-bottom: calc(var(--logo-h) + 3rem);
 }
 
 @keyframes slideFromLeft {
@@ -73,33 +55,4 @@ h1 {
 .bottom-brand img {
     height: var(--logo-h);
     width: auto;
-}
-
-h2 {
-    text-align: center;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(0.8rem, 2vw, 2rem);
-    padding: 0;
-    margin: 0 0 0.5rem;
-}
-
-.nav-menu a {
-    color: #e1dbd7;
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    letter-spacing: 0.2em;
-    font-size: clamp(0.65rem, 1vw, 0.85rem);
-    transition: font-weight 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-menu a:hover {
-    font-weight: 500;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
