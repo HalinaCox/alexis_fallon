@@ -1,5 +1,5 @@
 :root {
-    --logo-h: clamp(140px, 18vw, 260px);
+    --logo-h: clamp(130px, 17vw, 240px);
 }
 
 body {
@@ -34,6 +34,7 @@ body {
 .image-row img {
     width: clamp(200px, 25vw, 420px);
     height: clamp(280px, 35vw, 560px);
+    max-height: calc(100vh - var(--logo-h) - 8rem);
     object-fit: cover;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(0.15, 0.85, 0.45, 1);
