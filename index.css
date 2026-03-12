@@ -75,3 +75,15 @@ footer a {
 footer a:hover {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
+
+@keyframes twinkle {
+    0%, 100% { color: #e1dbd7; text-shadow: none; }
+    20%  { color: #ffffff; text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 25px rgba(255,255,255,0.5); }
+    40%  { color: #e1dbd7; text-shadow: none; }
+    60%  { color: #fff8f0; text-shadow: 0 0 6px rgba(255,255,255,0.6); }
+    80%  { color: #e1dbd7; text-shadow: none; }
+}
+
+.letter.twinkle {
+    animation: twinkle 1.2s ease-in-out forwards;
+}
