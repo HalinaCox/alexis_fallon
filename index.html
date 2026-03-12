@@ -35,5 +35,45 @@
             <p>© 2026 StyldByLex. All rights reserved. Website by <a href="https://halinacox.com" target="_blank">Halina Cox</a></p>
         </footer>
     </div>
+    <script>
+        const h1 = document.querySelector('h1');
+        const text = h1.textContent;
+        h1.textContent = '';
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.classList.add('letter');
+            h1.appendChild(span);
+        });
+
+        setTimeout(() => {
+            const letters = Array.from(document.querySelectorAll('.letter'));
+            const endTime = Date.now() + 5000;
+
+            function triggerTwinkle(letter) {
+                if (letter.classList.contains('twinkle')) return;
+                letter.classList.add('twinkle');
+                letter.addEventListener('animationend', () => {
+                    letter.classList.remove('twinkle');
+                }, { once: true });
+            }
+
+            function randomTwinkleLoop() {
+                if (Date.now() >= endTime) return;
+                const letter = letters[Math.floor(Math.random() * letters.length)];
+                triggerTwinkle(letter);
+                setTimeout(randomTwinkleLoop, Math.random() * 300 + 100);
+            }
+
+            // Initial staggered twinkle across all letters
+            letters.forEach(letter => {
+                const delay = Math.random() * 800;
+                setTimeout(() => triggerTwinkle(letter), delay);
+            });
+
+            // Keep randomly twinkling for 5 seconds
+            randomTwinkleLoop();
+        }, 3200);
+    </script>
 </body>
 </html>
